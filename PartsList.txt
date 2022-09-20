@@ -1,0 +1,3 @@
+PNP Bipolar Transistor 2SA2039-E https://www.mouser.se/ProductDetail/onsemi/2SA2039-E?qs=5C9Q4QJFsuOPzL46%252Bgpzqg%3D%3D
+NPN Bipolar Transistor (for microcontroller integration) BC547B https://www.mouser.se/ProductDetail/onsemi-Fairchild/BC547B?qs=UMEuL5FsraB3zD25tclGGQ%3D%3D
+NPN Bipolar Transistor (H-Bridge) 2SD1060S-1E https://www.mouser.se/ProductDetail/onsemi/2SD1060S-1E?qs=3DBkldq1Ndy7jC1YIjchnw%3D%3D
