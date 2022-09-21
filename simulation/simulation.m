@@ -1,9 +1,0 @@
-Ra = 0.5;
-La = 0.1;
-J = 5;
-B = 0.01;
-TL = 20;
-Va = 12;
-tau_a = La/Ra;
-tau_m = J/B;
-KePhi = 1.6;
