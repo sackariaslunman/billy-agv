@@ -1,6 +1,6 @@
-
+    
 % Circuit Equation
-% Va = i*R + L*di/dt + KePhi*w
+% Va = i*Ra + L*di/dt + KePhi*w
 % Tm = KePhi*i = TL + J*dw/dt + B*w
 
 % Linear regression:
@@ -21,15 +21,13 @@ Ia_data = T{:,5};
 Xy = zeros(4, 1);
 XX_T = zeros(4, 4);
  
-noise_scale = 0;
-
 for k = 2:length(Time_data)
-    Va_k = Va_data(k) + noise_scale * (rand(1) - 0.5);
-    Ia_k = Ia_data(k) + noise_scale * (rand(1) - 0.5);
-    W_k = W_data(k) + noise_scale * (rand(1) - 0.5);
+    Va_k = Va_data(k);
+    Ia_k = Ia_data(k);
+    W_k = W_data(k);
 
-    Ia_prim = (Ia_k - Ia_data(k - 1) + noise_scale * (rand(1) - 0.5)) / (Time_data(k) - Time_data(k-1));
-    W_prim = (W_data(k) - W_data(k - 1) + noise_scale * (rand(1) - 0.5)) / (Time_data(k) - Time_data(k-1));
+    Ia_prim = (Ia_k - Ia_data(k - 1)) / (Time_data(k) - Time_data(k-1));
+    W_prim = (W_data(k) - W_data(k - 1)) / (Time_data(k) - Time_data(k-1));
 
     Y = transpose([Va_k - KePhi*W_k, KePhi*Ia_k - TL]);
     X = [[Ia_k, Ia_prim, 0, 0]; [0, 0, W_prim, W_k]];
