@@ -29,5 +29,11 @@ def five_point_stencil(data: list, time_step: float):
     for k in range(2, len(data)+2):
         d_k = (-f[k+2] + 8*f[k+1] - 8*f[k-1] + f[k-2])/(12*time_step)
         d_data.append(d_k)
-    print(len(data), len(f), len(d_data))
     return d_data
+
+def sgn(x, margin = 0): 
+    if x > margin:
+        return 1
+    elif x < -margin:
+        return -1
+    return 0
