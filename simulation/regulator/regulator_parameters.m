@@ -8,20 +8,20 @@ W_max = 10;
 Va_max = 12;
 Ia_max = 10;
 
-N_torque = 50;
-N_speed = 1 / N_torque;
+N_speed = 50;
+N_torque = 1 / N_speed;
 
-Kg = N_speed * Ke / (Ra * Bm + Ke^2);
+Kg = Ke / (N_speed * (Ra * Bm + Ke^2));
 Tg = (Ra * Jm) / (Ra * Bm + Ke^2);
 
 Phi_m = 50 * (pi / 180);
 W_G150 = sqrt(3) / Tg;
 
-Wc = 30;
+Wc = 0.6 * W_G150;
 
-tau = 1.476e+4;
-zeta = 0.1;
-beta = 1.04e+3;
+tau = 1/Wc;
+zeta = 1;
+beta = 10;
 
 G_abs = Kg / (Wc * sqrt(1 + (Tg*Wc)^2));
 K_inf = Wc * tau * beta * sqrt(1 + (Wc*tau/beta)^2) / (G_abs * sqrt(((1 - (Wc*tau)^2)^2 ) + (2*zeta*Wc*tau)^2) );
@@ -33,9 +33,9 @@ Td = (tau^2)/Ti - Tf;
 Kp = Ki * Ti;
 Kd = Kp * Td;
 
-Kp = 70 / 2;
-Ki = Kp / 2;
-Kd = Ki / 2;
+% Kp = 80 / 2;
+% Ki = Kp / 4;
+% Kd = Ki / 2;
 disp(Kp)
 disp(Ki)
 disp(Kd)
